@@ -22,8 +22,8 @@ tech3AeonUnits = {
 }
 
 tech4AeonUnits = {
-    { 'ual0401' },
-    { 'ual0401' }
+    { 'ual0401', 'dalk003', 'ual0303', 'ual0304' },
+    { 'ual0401', 'dalk003', 'ual0303', 'ual0304' }
 }
 -- List of possible Tech 1 SERA land units
 tech1SeraUnits = {
@@ -45,8 +45,8 @@ tech3SeraUnits = {
 
 -- List of possible Tech 4 SERA land units
 tech4SeraUnits = {
-    { 'xsl0401' },
-    { 'xsl0401' }
+    { 'xsl0401', 'xsl0303', 'xsl0304', 'xsl0305'},
+    { 'xsl0401', 'xsl0303', 'xsl0304', 'xsl0305'}
 }
 -- List of possible Tech 1 UEF land units
 tech1UEFUnits = {
@@ -68,8 +68,8 @@ tech3UEFUnits = {
 
 -- List of possible Tech 4 UEF land units
 tech4UEFUnits = {
-    { 'uel0401' },
-    { 'uel0401' }
+    { 'uel0401','uel0303', 'uel0304', 'xel0305'},
+    { 'uel0401','uel0303', 'uel0304', 'xel0305'}
 }
 -- List of possible Tech 1 Cybran land units
 tech1CybranUnits = {

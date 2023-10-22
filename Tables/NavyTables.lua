@@ -45,8 +45,8 @@ tech3SeraUnits = {
 
 -- List of possible Tech 4 SERA units
 tech4SeraUnits = {
-    {'xsa0401'},
-    {'xsa0401'}
+    {'xsl0401'},
+    {'xsl0401'}
 }
 
 -- List of possible Tech 1 UEF units

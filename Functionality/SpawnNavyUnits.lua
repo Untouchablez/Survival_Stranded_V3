@@ -221,8 +221,16 @@ function SpawnNavyUnits()
                 end 
             end
 
-            IssueAggressiveMove({unitspawned},playerattackarea)
-            IssueFormMove({unitspawned}, attack, 'GrowthFormation', 0)
+            local random_action = math.random(2)
+
+            if random_action == 1 then
+                IssueAggressiveMove({unitspawned}, playerattackarea)
+            else
+                IssueFormMove({unitspawned}, playerattackarea, 'GrowthFormation', 0)
+            end
+    
+            -- Issue formation move towards the central attack point
+            IssueFormAggressiveMove({unitspawned}, attack, 'GrowthFormation', 0)
         end
     end
 end

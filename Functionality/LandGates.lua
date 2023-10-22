@@ -288,6 +288,20 @@ function FunctionForFourGatesDestroyed()
 
     -- Issue a FormMove command to move the units together in a formation
     IssueFormMove(group, ScenarioUtils.MarkerToPosition("SURVIVAL_CENTER_1"), 'AttackFormation', 0)
+
+    --- If Wrecks = on & all 4 gates killed then up the Health of all units
+    if ScenarioInfo.Options.opt_Wrecks == 0 then
+        
+        ScenarioInfo.Options.opt_Survival_HealthMultiplier = ScenarioInfo.Options.opt_Survival_HealthMultiplier + 2
+        --LOG("LandGates.lua : Check health mp ".. repr(ScenarioInfo.Options.opt_Survival_HealthMultiplier))
+        ScenarioInfo.Options.opt_Survival_DamageMultiplier = ScenarioInfo.Options.opt_Survival_DamageMultiplier + 2
+        --LOG("LandGates.lua : Check damage mp ".. repr(ScenarioInfo.Options.opt_Survival_DamageMultiplier))
+    end
+        
+    if ScenarioInfo.Options.opt_GameBreaker == 3 then
+        ScenarioInfo.Options.opt_Survival_HealthMultiplier = ScenarioInfo.Options.opt_Survival_HealthMultiplier + 4
+        ScenarioInfo.Options.opt_Survival_DamageMultiplier = ScenarioInfo.Options.opt_Survival_DamageMultiplier + 4
+    end
 end
 
 function FunctionForFiveGatesDestroyed()
@@ -479,6 +493,17 @@ function FunctionForSevenGatesDestroyed()
 
     -- Issue a FormMove command to move the units together in a formation
     IssueFormMove(group, ScenarioUtils.MarkerToPosition("SURVIVAL_CENTER_1"), 'AttackFormation', 0)
+
+    --- If Wrecks = on & all 4 gates killed then up the Health of all units
+    if ScenarioInfo.Options.opt_Wrecks == 0 then
+        ScenarioInfo.Options.opt_Survival_HealthMultiplier = ScenarioInfo.Options.opt_Survival_HealthMultiplier + 3
+        ScenarioInfo.Options.opt_Survival_DamageMultiplier = ScenarioInfo.Options.opt_Survival_DamageMultiplier + 3
+    end
+        
+    if ScenarioInfo.Options.opt_GameBreaker == 3 then
+        ScenarioInfo.Options.opt_Survival_HealthMultiplier = ScenarioInfo.Options.opt_Survival_HealthMultiplier + 5
+        ScenarioInfo.Options.opt_Survival_DamageMultiplier = ScenarioInfo.Options.opt_Survival_DamageMultiplier + 5
+    end
 end
 
 
@@ -732,7 +757,7 @@ function OnStart()
     local r = Utilities.GetRandomInt(1, 4)
     local gateFaction
     local armies = ListArmies()
-    UnitRevealer = import('/maps/Survival_Stranded_V3.v0005/Src/UnitRevealer.lua').newInstance(armies)
+    UnitRevealer = import('/maps/Survival_Stranded_V3.v0006/Src/UnitRevealer.lua').newInstance(armies)
     local players = {}
   
     -- Use the gateFaction variable for further processing

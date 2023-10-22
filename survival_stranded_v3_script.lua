@@ -1,4 +1,4 @@
-ScenarioInfo.MapPath = '/maps/survival_stranded_v3.v0005/'
+ScenarioInfo.MapPath = '/maps/survival_stranded_v3.v0006/'
 
 -- Forged Alliance
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
@@ -33,6 +33,7 @@ EnemyArmies = { }
 ScenarioUtils.CreateResources = function() end
 
 function OnPopulate()
+    ScenarioInfo.Options.Victory = 'sandbox'
     ScenarioUtils.InitializeArmies()
     ScenarioInfo.CampaignMode = true
     Sync.CampaignMode = true

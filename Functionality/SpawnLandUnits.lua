@@ -228,8 +228,13 @@ function SpawnLandUnits()
             table.insert(unitGroup, unitspawned)  -- Add the unit to the group
         end
 
-        -- Issue aggressive move to player's attack area
-        IssueFormAggressiveMove(unitGroup, playerattackarea, 'GrowthFormation', 0)
+        local random_action = math.random(2)
+
+        if random_action == 1 then
+            IssueAggressiveMove(unitGroup, playerattackarea)
+        else
+            IssueFormMove(unitGroup, playerattackarea, 'GrowthFormation', 0)
+        end
 
         -- Issue formation move towards the central attack point
         IssueFormAggressiveMove(unitGroup, attack, 'GrowthFormation', 0)
